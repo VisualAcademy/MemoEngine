@@ -1,0 +1,91 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div>
+        <input type="button" name="btnSeoul" id="btnSeoul" value="서울 데이터" />
+        <input type="button" name="btnBusan" id="btnBusan" value="부산 데이터" />
+    </div>
+    <div style="height: 185px; overflow: hidden; overflow-y: auto;">
+        <table id="tblWeathers" class="table">
+            <colgroup>
+                <col style="width: 10%;" />
+                <col style="width: 45%;" />
+                <col style="width: 45%;" />
+            </colgroup>
+            <thead style="color:#00b9b7; background-color:#e1faf7;">
+                <tr>
+                    <th>번호</th>
+                    <th>지역명</th>
+                    <th>Cloud</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3" class="text-center" style="height: 138px;">
+                        <div>
+                            날씨 정보가 없습니다. 
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        /*
+         * 전역 변수
+         */
+        var weathers = null; 
+
+        $(function () {
+            $("#btnSeoul").click(function () {
+                getWeatherByProvinces("서울");
+            });
+            $("#btnBusan").click(function () {
+                getWeatherByProvinces("부산");
+            });
+        });
+
+        /**
+         * @@description 지역별 날씨 리스트를 가져옵니다.  
+         * @@param locationName 지역 이름 
+         */
+        function getWeatherByProvinces(locationName) {
+            $.get("/api/WeatherByProvinces?locationName=" + locationName)
+                .done(function (data, textStatus, jqXHR) {
+                    weathers = data; 
+
+                    var tbody = $("#tblWeathers > tbody");
+                    if (weathers.length > 0) {
+                        tbody.html(""); 
+                    }
+
+                    for (var i = 0; i < weathers.length; i++) {
+                        var html = "";
+                        var item = weathers[i];
+
+                        html += "<td>" + item.Num + "</td>";
+                        html += "<td>" + item.Location + "</td>";
+                        html += "<td>" + item.Cloud + "</td>";
+
+                        tbody.append("<tr>" + html + "</tr>");
+                    }       
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+
+                });
+        }
+    </script>
+</body>
+</html>

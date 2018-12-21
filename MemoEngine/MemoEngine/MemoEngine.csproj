@@ -393,6 +393,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListOfCategoryController.cs" />
     <Compile Include="Controllers\ProvincesController.cs" />
+    <Compile Include="Controllers\WeatherByProvinceController.cs" />
+    <Compile Include="Controllers\WeatherByProvincesController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -451,6 +453,7 @@
     <Content Include="Views\Provinces\Details.cshtml" />
     <Content Include="Views\Provinces\Edit.cshtml" />
     <Content Include="Views\Provinces\Index.cshtml" />
+    <Content Include="Views\WeatherByProvince\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
