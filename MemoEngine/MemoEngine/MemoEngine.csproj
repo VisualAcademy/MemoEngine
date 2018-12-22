@@ -209,6 +209,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Charts\AnnualHeatingCosts.html" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -228,10 +229,15 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
+    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Samples\FrmListOfCategory.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chartjs\Chart.bundle.js" />
+    <Content Include="Scripts\chartjs\Chart.bundle.min.js" />
+    <Content Include="Scripts\chartjs\Chart.js" />
+    <Content Include="Scripts\chartjs\Chart.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -390,6 +396,11 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AnnualHeatingCostsController.cs" />
+    <Compile Include="Controllers\AnnualHeatingCosts\AnnualHeatingCostsRepository.cs" />
+    <Compile Include="Controllers\AnnualHeatingCosts\AnnualHeatingCostsRepositoryInMemory.cs" />
+    <Compile Include="Controllers\AnnualHeatingCosts\HeatingCost.cs" />
+    <Compile Include="Controllers\AnnualHeatingCosts\IAnnualHeatingCostsRepository.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListOfCategoryController.cs" />
     <Compile Include="Controllers\ProvincesController.cs" />

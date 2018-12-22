@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>연간 난방 비용</title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="height: 185px; overflow: hidden; overflow-y: auto;">
+        <table id="tblHeatingCosts" class="table table-bordered">
+            <colgroup>
+                <col style="width: 20%;" />
+                <col style="width: 80%;" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>월</th>
+                    <th>난방비용</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" class="text-center" style="height: 138px;">
+                        난방 정보가 없습니다. 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="width: 400px; height: 400px;">
+        <canvas id="chartHeatingCosts" width="100" height="100"></canvas>
+    </div>
+    
+    <script src="../Scripts/jquery-3.3.1.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/chartjs/Chart.js"></script>
+    <script>
+        /*
+         *  전역 변수 
+         */
+        var heatingCosts = null; 
+
+        $(function () {
+            getAnnualHeatingCosts("아무거나");
+        });
+
+        /**
+         * @description 연간 난방 비용 차트 정보를 가져옵니다. 
+         * @param chartName 차트 이름: 연간 난방 비용, ... 
+         */
+        function getAnnualHeatingCosts(chartName) {
+            var apiUrl = "/api/Charts/AnnualHeatingCosts?chartName=" + chartName;
+
+            $.get(apiUrl)
+                .done(function (data, textStatus, jqXHR) {
+                    heatingCosts = data;
+
+                    // 테이블 그리기
+                    drawingTable();
+
+                    // 차트 그리기
+                    drwaingChart(); 
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+
+                });
+        }
+
+        /**
+         * @description 레코드셋을 가지고 테이블을 그립니다. 
+         * */
+        function drawingTable() {
+            var tbody = $("#tblHeatingCosts > tbody");
+            if (heatingCosts.length > 0) {
+                tbody.html(""); 
+            }
+
+            // 테이블 그리기
+            for (var i = 0; i < heatingCosts.length; i++) {
+                var item = heatingCosts[i]; 
+                var html = "";
+                html += "<td>" + item.Month + "</td>";
+                html += "<td>" + item.Cost + "</td>";
+
+                tbody.append("<tr>" + html + "</tr>");
+            }   
+        }
+
+        /**
+         * @description Chart.js 라이브러리를 사용하여 bar 차트를 그립니다.
+         * */
+        function drwaingChart() {
+            // 연간 난방 비용 차트 그리기
+            var ctxHeatingCosts = document.getElementById("chartHeatingCosts");
+
+            var arrMonth = [];
+            var arrCost = [];
+
+            for (var i = 0; i < heatingCosts.length; i++) {
+                arrMonth.push(heatingCosts[i].Month);
+                arrCost.push(heatingCosts[i].Cost);
+            }   
+
+            var chart = new Chart(ctxHeatingCosts, {
+                type: "bar",
+                data: {
+                    labels: arrMonth,
+                    datasets: [{
+                        data: arrCost,
+                        radius: 0,
+                        fill: true,
+                        lineTension: 0,
+                        borderColor: "rgba(54, 162, 235, 0.75)",
+                        backgroundColor: "rgba(54, 162, 235, 0.2)",
+                        borderWidth: 0.7
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: '월'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: '난방비용'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

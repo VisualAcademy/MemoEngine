@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "Chart.js@2.7.3",
+      "destination": "Scripts/chartjs",
+      "files": [ "Chart.js", "Chart.min.js", "Chart.bundle.js", "Chart.bundle.min.js" ]
+    }
+  ]
+}
