@@ -231,6 +231,8 @@
     <Content Include="Account\Web.config" />
     <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Samples\FrmDragAndDrop.aspx" />
+    <Content Include="Samples\FrmDragAndDropDiv.aspx" />
     <Content Include="Samples\FrmListOfCategory.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -420,6 +422,20 @@
     <Compile Include="Models\MemoEngineContext.cs" />
     <Compile Include="Models\Province.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\FrmDragAndDrop.aspx.cs">
+      <DependentUpon>FrmDragAndDrop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\FrmDragAndDrop.aspx.designer.cs">
+      <DependentUpon>FrmDragAndDrop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\FrmDragAndDropDiv.aspx.cs">
+      <DependentUpon>FrmDragAndDropDiv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\FrmDragAndDropDiv.aspx.designer.cs">
+      <DependentUpon>FrmDragAndDropDiv.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\FrmListOfCategory.aspx.cs">
       <DependentUpon>FrmListOfCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
