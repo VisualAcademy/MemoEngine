@@ -217,6 +217,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Demos\Bootstrap4\BootstrapWithCode.html" />
     <Content Include="Demos\Chartjs\Chartjs.html" />
     <Content Include="Demos\Chartjs\Chart_Pie_Cost.html" />
     <Content Include="favicon.ico" />
