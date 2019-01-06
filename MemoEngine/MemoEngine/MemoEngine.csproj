@@ -217,6 +217,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Demos\Bootstrap4\BS4_Form_FormGroup_InputGroup.html" />
+    <Content Include="Demos\Bootstrap4\BS4_FormInline.html" />
     <Content Include="Demos\Bootstrap4\BootstrapWithCode.html" />
     <Content Include="Demos\Chartjs\Chartjs.html" />
     <Content Include="Demos\Chartjs\Chart_Pie_Cost.html" />
