@@ -222,6 +222,8 @@
     <Content Include="Demos\Bootstrap4\BootstrapWithCode.html" />
     <Content Include="Demos\Chartjs\Chartjs.html" />
     <Content Include="Demos\Chartjs\Chart_Pie_Cost.html" />
+    <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
+    <Content Include="Demos\WebForms\FrmDropDownListCascading.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -424,6 +426,26 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Demos\WebForms\ElectricityPlansUserControl.ascx.cs">
+      <DependentUpon>ElectricityPlansUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demos\WebForms\ElectricityPlansUserControl.ascx.designer.cs">
+      <DependentUpon>ElectricityPlansUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\WebForms\ElectricityPlans\ElectricityPlanRepositoryInMemory.cs" />
+    <Compile Include="Demos\WebForms\ElectricityPlans\ElectricUsesType.cs" />
+    <Compile Include="Demos\WebForms\ElectricityPlans\ElectricUsesTypeExtensions.cs" />
+    <Compile Include="Demos\WebForms\ElectricityPlans\IElectricityPlanRepository.cs" />
+    <Compile Include="Demos\WebForms\FrmDropDownListCascading.aspx.cs">
+      <DependentUpon>FrmDropDownListCascading.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demos\WebForms\FrmDropDownListCascading.aspx.designer.cs">
+      <DependentUpon>FrmDropDownListCascading.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\WebForms\ElectricityPlans\RateTypeOption.cs" />
+    <Compile Include="Demos\WebForms\ElectricityPlans\RateTypeOptionExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
