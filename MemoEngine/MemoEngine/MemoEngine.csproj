@@ -224,6 +224,7 @@
     <Content Include="Demos\Chartjs\Chart_Pie_Cost.html" />
     <Content Include="Demos\HTML\FrmHtmlDropDownList.html" />
     <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
+    <Content Include="Demos\WebForms\FrmAjaxDropDownList.aspx" />
     <Content Include="Demos\WebForms\FrmDropDownListCascading.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -416,6 +417,7 @@
     <Compile Include="Controllers\AnnualHeatingCosts\HeatingCost.cs" />
     <Compile Include="Controllers\AnnualHeatingCosts\IAnnualHeatingCostsRepository.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LandTypeServicesController.cs" />
     <Compile Include="Controllers\ListOfCategoryController.cs" />
     <Compile Include="Controllers\ProvincesController.cs" />
     <Compile Include="Controllers\WeatherByProvinceController.cs" />
@@ -438,6 +440,13 @@
     <Compile Include="Demos\WebForms\ElectricityPlans\ElectricUsesType.cs" />
     <Compile Include="Demos\WebForms\ElectricityPlans\ElectricUsesTypeExtensions.cs" />
     <Compile Include="Demos\WebForms\ElectricityPlans\IElectricityPlanRepository.cs" />
+    <Compile Include="Demos\WebForms\FrmAjaxDropDownList.aspx.cs">
+      <DependentUpon>FrmAjaxDropDownList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demos\WebForms\FrmAjaxDropDownList.aspx.designer.cs">
+      <DependentUpon>FrmAjaxDropDownList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Demos\WebForms\FrmDropDownListCascading.aspx.cs">
       <DependentUpon>FrmDropDownListCascading.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
