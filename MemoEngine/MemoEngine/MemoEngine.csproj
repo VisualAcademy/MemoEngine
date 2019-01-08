@@ -222,6 +222,7 @@
     <Content Include="Demos\Bootstrap4\BootstrapWithCode.html" />
     <Content Include="Demos\Chartjs\Chartjs.html" />
     <Content Include="Demos\Chartjs\Chart_Pie_Cost.html" />
+    <Content Include="Demos\HTML\FrmHtmlDropDownList.html" />
     <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
     <Content Include="Demos\WebForms\FrmDropDownListCascading.aspx" />
     <Content Include="favicon.ico" />
