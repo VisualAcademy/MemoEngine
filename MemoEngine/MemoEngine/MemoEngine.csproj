@@ -226,6 +226,7 @@
     <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
     <Content Include="Demos\WebForms\FrmAjaxDropDownList.aspx" />
     <Content Include="Demos\WebForms\FrmDropDownListCascading.aspx" />
+    <Content Include="Demos\WebForms\FrmSpreadSheet.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -456,6 +457,14 @@
     </Compile>
     <Compile Include="Demos\WebForms\ElectricityPlans\RateTypeOption.cs" />
     <Compile Include="Demos\WebForms\ElectricityPlans\RateTypeOptionExtensions.cs" />
+    <Compile Include="Demos\WebForms\FrmSpreadSheet.aspx.cs">
+      <DependentUpon>FrmSpreadSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demos\WebForms\FrmSpreadSheet.aspx.designer.cs">
+      <DependentUpon>FrmSpreadSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\WebForms\PriceOutputDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
