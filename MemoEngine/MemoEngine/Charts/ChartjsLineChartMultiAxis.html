@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.3.1.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/chartjs/Chart.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="chartAreas">
+                <canvas id="multiLineChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <script>
+        // 차트 데이터 준비
+        var lineChartData = {
+            labels: [0, 1, 2, 3, 4, 5, 6],
+            datasets: [{
+                label: '사용자 단가',
+                borderColor: 'blue',
+                backgroundColor: 'blue',
+                fill: false,
+                data: [
+                    93, 92, 91, 93, 95, 97, 100
+                ]
+            }, {
+                label: '기준단가',
+                borderColor: "red",
+                backgroundColor: "red",
+                fill: false,
+                data: [
+                    94, 96, 98, 97, 100, 99, 91
+                ]
+            }
+            ]
+        };
+
+        window.onload = function () {
+            var ctx = document.getElementById("multiLineChart").getContext("2d");
+            var myMultiLineChart = Chart.Line(ctx, {
+                type: 'line',
+                data: lineChartData,
+                options: {
+                    responsive: true,
+                    hoverMode: 'index',
+                    stacked: false,
+                    title: {
+                        display: true,
+                        text: "멀티 차트"
+                    },                    
+                    scales: {
+                        yAxes: [{
+                            type: 'linear',
+                            display: true,
+                            position: 'left'
+                        }],
+                    },
+                    elements: {
+                        point: {
+                            pointStyle: 'rect'
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
