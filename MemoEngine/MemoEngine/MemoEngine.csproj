@@ -235,9 +235,13 @@
     <Content Include="Demos\HTML\FrmHtmlDropDownList.html" />
     <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
     <Content Include="Demos\WebForms\FrmAjaxDropDownList.aspx" />
+    <Content Include="Demos\WebForms\FrmDescriptionsBy.aspx" />
     <Content Include="Demos\WebForms\FrmDropDownListCascading.aspx" />
     <Content Include="Demos\WebForms\FrmSpreadSheet.aspx" />
     <Content Include="Demos\WebForms\FrmWYSIWYG.aspx" />
+    <Content Include="Descriptions\DescriptionManager.aspx" />
+    <Content Include="Descriptions\Descriptions.aspx" />
+    <Content Include="Descriptions\DescriptionsUserControl.ascx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -251,6 +255,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <Content Include="libman.json" />
+    <Content Include="Dashboard\DashboardCore.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="lib\chartjs\Chart.bundle.js" />
     <Content Include="lib\chartjs\Chart.bundle.min.js" />
@@ -541,6 +546,13 @@
     <Compile Include="Controllers\ProvincesController.cs" />
     <Compile Include="Controllers\WeatherByProvinceController.cs" />
     <Compile Include="Controllers\WeatherByProvincesController.cs" />
+    <Compile Include="Dashboard\DashboardCore.Master.cs">
+      <DependentUpon>DashboardCore.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\DashboardCore.Master.designer.cs">
+      <DependentUpon>DashboardCore.Master</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -566,6 +578,13 @@
     <Compile Include="Demos\WebForms\FrmAjaxDropDownList.aspx.designer.cs">
       <DependentUpon>FrmAjaxDropDownList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Demos\WebForms\FrmDescriptionsBy.aspx.cs">
+      <DependentUpon>FrmDescriptionsBy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demos\WebForms\FrmDescriptionsBy.aspx.designer.cs">
+      <DependentUpon>FrmDescriptionsBy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Demos\WebForms\FrmDropDownListCascading.aspx.cs">
       <DependentUpon>FrmDropDownListCascading.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -590,6 +609,27 @@
       <DependentUpon>FrmWYSIWYG.aspx</DependentUpon>
     </Compile>
     <Compile Include="Demos\WebForms\PriceOutputDto.cs" />
+    <Compile Include="Descriptions\DescriptionManager.aspx.cs">
+      <DependentUpon>DescriptionManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Descriptions\DescriptionManager.aspx.designer.cs">
+      <DependentUpon>DescriptionManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Descriptions\Descriptions.aspx.cs">
+      <DependentUpon>Descriptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Descriptions\Descriptions.aspx.designer.cs">
+      <DependentUpon>Descriptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Descriptions\DescriptionsUserControl.ascx.cs">
+      <DependentUpon>DescriptionsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Descriptions\DescriptionsUserControl.ascx.designer.cs">
+      <DependentUpon>DescriptionsUserControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
