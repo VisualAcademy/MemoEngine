@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FrmSpreadSheet.aspx.cs" Inherits="MemoEngine.Demos.WebForms.FrmSpreadSheet" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FrmSpreadSheetWithDatabase.aspx.cs" Inherits="MemoEngine.Demos.WebForms.FrmSpreadSheetWithDatabase" %>
 
 <!DOCTYPE html>
 
@@ -35,17 +35,15 @@
             <div class="row">
                 <div class="col-md-6">
                     <asp:GridView ID="ctlTwentyYears" runat="server" CssClass="table table-bordered table-condensed table-hover"
-                        AutoGenerateColumns="false" ItemType="MemoEngine.Models.PriceOutputDto">
+                        AutoGenerateColumns="false" ItemType="MemoEngine.Models.UserPriceData">
                         <Columns>
-                            <asp:BoundField DataField="Index" HeaderText="년차" />
+                            <asp:BoundField DataField="Num" HeaderText="년차" />
                             <asp:BoundField DataField="Year" HeaderText="년도" />
                             <asp:BoundField DataField="StandardPrice" HeaderText="기준단가" />
-                            <%--<asp:BoundField DataField="UserPrice" HeaderText="사용자단가" />--%>
                             <asp:TemplateField HeaderText="사용자단가">
                                 <ItemTemplate>
-                                    <%--<asp:TextBox ID="txtUserPrice" runat="server" Text='' ClientIDMode="Static"></asp:TextBox>--%>
                                     <input type="text" id="txtUserPrice" name="txtUserPrice" value="<%#: Item.UserPrice %>" class="form-control" />
-                                    <input type="hidden" name="hdnIndex" value="<%#: Item.Index %>" />
+                                    <input type="hidden" name="hdnNum" value="<%#: Item.Num %>" />
                                     <input type="hidden" name="hdnYear" value="<%#: Item.Year %>" />
                                     <input type="hidden" name="hdnStandardPrice" value="<%#: Item.StandardPrice %>" />
                                 </ItemTemplate>

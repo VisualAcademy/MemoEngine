@@ -62,5 +62,9 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Provinces.sql" />
     <Build Include="dbo\Tables\Descriptions.sql" />
+    <Build Include="dbo\Tables\UserPrices.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MemoEngine.Database.publish.xml" />
   </ItemGroup>
 </Project>
