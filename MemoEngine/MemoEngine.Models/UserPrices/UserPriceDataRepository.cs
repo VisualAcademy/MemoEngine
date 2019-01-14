@@ -1,8 +1,10 @@
-﻿using Dul.Data;
+﻿using Dapper;
+using Dul.Data;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace MemoEngine.Models
 {
@@ -16,6 +18,45 @@ namespace MemoEngine.Models
         public UserPriceDataRepository(string connectionString)
         {
             db = new SqlConnection(connectionString);
+        }
+
+        public List<UserPriceData> GetAllByProjectId(int projectId)
+        {
+            string sql = "Select * From UserPrices Where ProjectId = @ProjectId";
+            return db.Query<UserPriceData>(sql, new { ProjectId = projectId }).ToList();
+        }
+
+        public void AddOrUpdate(List<UserPriceData> datas)
+        {
+            for (int i = 0; i < datas.Count; i++)
+            {
+                if (datas[i] != null)
+                {
+                    string countQuery = "Select Count(*) From UserPrices Where ProjectId = @ProjectId And [Year] = @Year And Num = @Num";
+                    int cnt = db.Query<int>(countQuery, 
+                        new { ProjectId = datas[i].ProjectId, Year = datas[i].Year, Num = datas[i].Num }).SingleOrDefault();
+                    if (cnt > 0)
+                    {
+                        // Update
+                        string updateQuery = "Update UserPrices Set StandardPrice = @StandardPrice, UserPrice = @UserPrice " +
+                            "Where ProjectId = @ProjectId And [Year] = @Year And Num = @Num";
+                        db.Execute(updateQuery, datas[i]);
+                    }
+                    else
+                    {
+                        // Insert
+                        string insertQuery = "Insert Into UserPrices (ProjectId, Num, [Year], StandardPrice, UserPrice) " +
+                            "Values (@ProjectId, @Num, @Year, @StandardPrice, @UserPrice)";
+                        db.Execute(insertQuery, datas[i]);
+                    }
+                }
+            }
+        }
+
+        public UserPriceData GetByCondition(UserPriceData model)
+        {
+            string sql = "Select * From UserPrices Where ProjectId = @ProjectId And Num = @Num And [Year] = @Year";
+            return db.Query<UserPriceData>(sql, model).SingleOrDefault(); 
         }
 
         public UserPriceData Add(UserPriceData model)
@@ -37,6 +78,7 @@ namespace MemoEngine.Models
         {
             throw new NotImplementedException();
         }
+
 
         public int Has()
         {

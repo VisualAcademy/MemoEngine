@@ -1,4 +1,5 @@
 ﻿using Dul.Data;
+using System.Collections.Generic;
 
 namespace MemoEngine.Models
 {
@@ -7,6 +8,8 @@ namespace MemoEngine.Models
     /// </summary>
     public interface IUserPriceDataRepository : IBreadShop<UserPriceData>
     {
-
+        List<UserPriceData> GetAllByProjectId(int projectId);
+        void AddOrUpdate(List<UserPriceData> datas);
+        UserPriceData GetByCondition(UserPriceData model);
     }
 }

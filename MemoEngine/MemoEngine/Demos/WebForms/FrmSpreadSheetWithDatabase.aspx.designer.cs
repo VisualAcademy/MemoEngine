@@ -22,13 +22,22 @@ namespace MemoEngine.Demos.WebForms {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtStandardPrice control.
+        /// txtProjectId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStandardPrice;
+        protected global::System.Web.UI.WebControls.TextBox txtProjectId;
+        
+        /// <summary>
+        /// txtStardPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStardPrice;
         
         /// <summary>
         /// ddlSelect control.
@@ -56,15 +65,6 @@ namespace MemoEngine.Demos.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView ctlTwentyYears;
-        
-        /// <summary>
-        /// ctlSavedData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ctlSavedData;
         
         /// <summary>
         /// btnSave control.

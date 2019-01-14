@@ -1,27 +1,81 @@
 ﻿using MemoEngine.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace MemoEngine.Demos.WebForms
 {
     public partial class FrmSpreadSheetWithDatabase : System.Web.UI.Page
     {
+        private readonly UserPriceDataRepository _repository;
+
+        public int ProjectId { get; set; } = 1;
+
+        public FrmSpreadSheetWithDatabase()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            _repository = new UserPriceDataRepository(connectionString);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(Request["ProjectId"]))
+            {
+                txtProjectId.Text = Request["ProjectId"];
+                ProjectId = Convert.ToInt32(Request["ProjectId"]); 
+            }
+            else
+            {
+                txtProjectId.Text = "-1";
+                ProjectId = -1;
+            }
+
             if (!Page.IsPostBack)
             {
                 기준단가가져오기();
+                DisplayInitialData();
             }
+        }
+
+        private void DisplayInitialData()
+        {
+            var datas = GetEmptyDatas();
+
+            // 빈 데이터 컬렉션에 기존 DB에 저장된 데이터로 변경 
+            for (int i = 0; i < datas.Count; i++)
+            {
+                var dbData = _repository.GetByCondition(datas[i]);
+                if (dbData != null)
+                {
+                    datas[i].StandardPrice = dbData.StandardPrice;
+                    datas[i].UserPrice = dbData.UserPrice;
+
+                }
+            }
+
+            ctlTwentyYears.DataSource = datas;
+            ctlTwentyYears.DataBind(); 
         }
 
         private void 기준단가가져오기()
         {
-            txtStandardPrice.Text = 1234.ToString();
+            txtStardPrice.Text = 1234.ToString();
+        }
+
+        List<UserPriceData> GetEmptyDatas()
+        {
+            List<UserPriceData> twenty = new List<UserPriceData>();
+            for (int i = 0; i < 21; i++)
+            {
+                int now = i + DateTime.Now.Year;
+                twenty.Add(new UserPriceData { Num = i, Year = now, StandardPrice = 0, UserPrice = 0, ProjectId = ProjectId });
+            }
+            return twenty; 
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(txtStandardPrice.Text, out var standardPrice))
+            if (double.TryParse(txtStardPrice.Text, out var standardPrice))
             {
 
             }
@@ -34,7 +88,7 @@ namespace MemoEngine.Demos.WebForms
             for (int i = 0; i < 21; i++)
             {
                 int now = i + DateTime.Now.Year; 
-                twenty.Add(new UserPriceData { Num = i, Year = now, StandardPrice = standardPrice, UserPrice = standardPrice }); 
+                twenty.Add(new UserPriceData { Num = i, Year = now, StandardPrice = standardPrice, UserPrice = 0 }); 
             }
 
             ctlTwentyYears.DataSource = twenty;
@@ -44,8 +98,8 @@ namespace MemoEngine.Demos.WebForms
         protected void btnSave_Click(object sender, EventArgs e)
         {
             string[] userPrices = Request.Form.GetValues("txtUserPrice");
+            string[] standardPrices = Request.Form.GetValues("txtStandardPrice");
             string[] numbers = Request.Form.GetValues("hdnNum");
-            string[] standardPrices = Request.Form.GetValues("hdnStandardPrice");
             string[] years = Request.Form.GetValues("hdnYear");
 
             List<UserPriceData> twenty = new List<UserPriceData>();
@@ -84,11 +138,13 @@ namespace MemoEngine.Demos.WebForms
                     year = 0;
                 }
 
-                twenty.Add(new UserPriceData { Num = index, Year = year, StandardPrice = standardPrice, UserPrice = userPrice });
+                twenty.Add(new UserPriceData { Num = index, Year = year, StandardPrice = standardPrice, UserPrice = userPrice, ProjectId = ProjectId });
             }
 
-            ctlSavedData.DataSource = twenty;
-            ctlSavedData.DataBind();
+            _repository.AddOrUpdate(twenty);
+
+            // 현재 페이지 다시 로드
+            Response.Redirect(Request.RawUrl); 
         }
     }
 }
