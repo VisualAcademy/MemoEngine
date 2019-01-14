@@ -123,10 +123,21 @@
                         text: "멀티 차트"
                     },
                     scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: '년차, Year'
+                            }
+                        }],
                         yAxes: [{
                             type: 'linear',
                             display: true,
-                            position: 'left'
+                            position: 'left',
+                            scaleLabel: {
+                                display: true,
+                                labelString: '원'
+                            }
                         }],
                     },
                     elements: {
