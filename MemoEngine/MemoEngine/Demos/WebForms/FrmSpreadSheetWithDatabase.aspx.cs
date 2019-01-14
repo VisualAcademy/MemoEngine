@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 
 namespace MemoEngine.Demos.WebForms
 {
@@ -10,6 +11,9 @@ namespace MemoEngine.Demos.WebForms
         private readonly UserPriceDataRepository _repository;
 
         public int ProjectId { get; set; } = 1;
+        public string Labels { get; private set; }
+        public string UserPrices { get; private set; }
+        public string StandardPrices { get; private set; }
 
         public FrmSpreadSheetWithDatabase()
         {
@@ -54,7 +58,16 @@ namespace MemoEngine.Demos.WebForms
             }
 
             ctlTwentyYears.DataSource = datas;
-            ctlTwentyYears.DataBind(); 
+            ctlTwentyYears.DataBind();
+
+            PrintChartData(datas);
+        }
+
+        private void PrintChartData(List<UserPriceData> datas)
+        {
+            Labels = string.Join(",", datas.Select(d => d.Num).ToArray()); 
+            UserPrices = string.Join(",", datas.Select(d => d.UserPrice).ToArray());
+            StandardPrices = string.Join(",", datas.Select(d => d.StandardPrice).ToArray());
         }
 
         private void 기준단가가져오기()
