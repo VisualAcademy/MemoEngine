@@ -6,6 +6,12 @@
       "library": "Chart.js@2.7.3",
       "destination": "Scripts/chartjs",
       "files": [ "Chart.js", "Chart.min.js", "Chart.bundle.js", "Chart.bundle.min.js" ]
+    },
+    {
+      "library": "bootstrap@4.1.3",
+      "provider": "unpkg",
+      "files": ["dist/css/bootstrap.css", "dist/js/bootstrap.js"],
+      "destination": "lib/bs4/"
     }
   ]
 }
