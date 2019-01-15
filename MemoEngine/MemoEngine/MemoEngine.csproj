@@ -233,6 +233,10 @@
     <Content Include="Demos\Bootstrap4\BS4_RowColCard.html" />
     <Content Include="Demos\Chartjs\Chartjs.html" />
     <Content Include="Demos\Chartjs\Chart_Pie_Cost.html" />
+    <Content Include="Demos\Chartjs\FrmBarChart.html" />
+    <Content Include="Demos\Chartjs\FrmBarChartAxes.html" />
+    <Content Include="Demos\Chartjs\FrmBarChartAxesHours.html" />
+    <Content Include="Demos\Chartjs\FrmBarChartAxesHoursStacked.html" />
     <Content Include="Demos\HTML\FrmHtmlDropDownList.html" />
     <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
     <Content Include="Demos\WebForms\FrmAjaxDropDownList.aspx" />
