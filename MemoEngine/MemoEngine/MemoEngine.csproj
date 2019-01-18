@@ -242,6 +242,7 @@
     <Content Include="Demos\WebForms\FrmAjaxDropDownList.aspx" />
     <Content Include="Demos\WebForms\FrmDescriptionsBy.aspx" />
     <Content Include="Demos\WebForms\FrmDropDownListCascading.aspx" />
+    <Content Include="Demos\WebForms\FrmGridViewWithRadioButtonCheckedChanged.aspx" />
     <Content Include="Demos\WebForms\FrmSpreadSheetWithDatabase.aspx" />
     <Content Include="Demos\WebForms\FrmSpreadSheet.aspx" />
     <Content Include="Demos\WebForms\FrmWYSIWYG.aspx" />
@@ -602,6 +603,13 @@
     </Compile>
     <Compile Include="Demos\WebForms\ElectricityPlans\RateTypeOption.cs" />
     <Compile Include="Demos\WebForms\ElectricityPlans\RateTypeOptionExtensions.cs" />
+    <Compile Include="Demos\WebForms\FrmGridViewWithRadioButtonCheckedChanged.aspx.cs">
+      <DependentUpon>FrmGridViewWithRadioButtonCheckedChanged.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demos\WebForms\FrmGridViewWithRadioButtonCheckedChanged.aspx.designer.cs">
+      <DependentUpon>FrmGridViewWithRadioButtonCheckedChanged.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Demos\WebForms\FrmSpreadSheetWithDatabase.aspx.cs">
       <DependentUpon>FrmSpreadSheetWithDatabase.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
