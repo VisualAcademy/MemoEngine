@@ -272,6 +272,7 @@
     <Content Include="lib\chartjs\Chart.bundle.min.js" />
     <Content Include="lib\chartjs\Chart.js" />
     <Content Include="lib\chartjs\Chart.min.js" />
+    <Content Include="lib\jquery\jquery.js" />
     <Content Include="Samples\FrmDragAndDrop.aspx" />
     <Content Include="Samples\FrmDragAndDropDiv.aspx" />
     <Content Include="Samples\FrmListOfCategory.aspx" />
