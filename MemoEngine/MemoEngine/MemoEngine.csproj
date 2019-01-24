@@ -218,6 +218,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="BoardFiles\Projects\Projects.txt" />
     <Content Include="Charts\AnnualHeatingCosts.html" />
     <Content Include="Charts\ChartjsLineChartMultiAxis.html" />
     <Content Include="Contact.aspx" />
@@ -238,6 +239,7 @@
     <Content Include="Demos\Chartjs\FrmBarChartAxesHours.html" />
     <Content Include="Demos\Chartjs\FrmBarChartAxesHoursStacked.html" />
     <Content Include="Demos\HTML\FrmHtmlDropDownList.html" />
+    <Content Include="Demos\jQuery\Ajax\MakeLocationFile.html" />
     <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
     <Content Include="Demos\WebForms\FrmAjaxDropDownList.aspx" />
     <Content Include="Demos\WebForms\FrmDescriptionsBy.aspx" />
@@ -552,6 +554,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandTypeServicesController.cs" />
     <Compile Include="Controllers\ListOfCategoryController.cs" />
+    <Compile Include="Controllers\MakeLocationFileServicesController.cs" />
     <Compile Include="Controllers\ProvincesController.cs" />
     <Compile Include="Controllers\WeatherByProvinceController.cs" />
     <Compile Include="Controllers\WeatherByProvincesController.cs" />

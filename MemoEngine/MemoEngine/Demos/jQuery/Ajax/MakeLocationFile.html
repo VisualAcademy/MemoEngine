@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Ajax를 사용하여 서버 쪽에 텍스트파일 생성하기</title>
+    <script src="lib/jquery/jquery.js"></script>
+</head>
+<body>
+    <script>
+        $(function () {
+            id = 2345; 
+            makeLocationFile(id);
+        });
+
+        function makeLocationFile(id) {
+            $.ajax({
+                type: 'POST',
+                url: '/api/MakeLocationFileServices/PostMakeFile?Id=' + id,
+                dataType: 'JSON',
+                success: function (data) {
+                    alert('파일이 생성되었습니다.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
