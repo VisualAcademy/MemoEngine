@@ -50,8 +50,8 @@
     <Reference Include="DocumentFormat.OpenXml, Version=2.9.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.9.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
-    <Reference Include="Dul, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dul.1.1.2\lib\netstandard2.0\Dul.dll</HintPath>
+    <Reference Include="Dul, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dul.1.1.4\lib\netstandard2.0\Dul.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -248,6 +248,8 @@
     <Content Include="Demos\Bootstrap4\BootstrapWithCode.html" />
     <Content Include="Demos\Bootstrap4\BS4_RowColCard.html" />
     <Content Include="Demos\Chartjs\Chartjs.html" />
+    <Content Include="Demos\Chartjs\ChartMonthSumGenerations.html" />
+    <Content Include="Demos\Chartjs\ChartMonthSumLoadsAndGenerations.html" />
     <Content Include="Demos\Chartjs\Chart_Pie_Cost.html" />
     <Content Include="Demos\Chartjs\FrmBarChart.html" />
     <Content Include="Demos\Chartjs\FrmBarChartAxes.html" />
@@ -568,6 +570,7 @@
     <Compile Include="Controllers\AnnualHeatingCosts\AnnualHeatingCostsRepositoryInMemory.cs" />
     <Compile Include="Controllers\AnnualHeatingCosts\HeatingCost.cs" />
     <Compile Include="Controllers\AnnualHeatingCosts\IAnnualHeatingCostsRepository.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandTypeServicesController.cs" />
     <Compile Include="Controllers\ListOfCategoryController.cs" />
@@ -753,6 +756,9 @@
     <Content Include="Scripts\MemoEngine\ckeditor_basic\README.md" />
     <Content Include="Scripts\MemoEngine\ckeditor_basic\skins\moono-lisa\readme.md" />
     <Content Include="Scripts\MemoEngine\ckeditor_basic\yarn.lock" />
+    <Content Include="Views\Chart\ChartMonthSumGenerations.cshtml" />
+    <Content Include="Views\Chart\ChartMonthSumLoadsAndGenerations.cshtml" />
+    <Content Include="Views\Chart\ChartReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

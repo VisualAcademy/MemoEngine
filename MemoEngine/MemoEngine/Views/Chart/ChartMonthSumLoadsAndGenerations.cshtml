@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>월별 누적된 전기사용량 및 발전량</title>
+    <script src="~/lib/Chartjs/Chart.js"></script>
+</head>
+<body>
+    <div>
+        <canvas id="monthLoadsAndGenerations"></canvas>
+        <script>
+            var monthLoadsAndGenerationsContext = document.getElementById("monthLoadsAndGenerations").getContext('2d');
+            var monthLoadsAndGenerations = new Chart(monthLoadsAndGenerationsContext, {
+                type: 'bar',
+                data: {
+                    labels: [@ViewData["Labels"].ToString()],
+                    datasets: [{
+                        label: '부하량',
+                        data: [@ViewBag.Loads.ToString()],
+                        backgroundColor: "rgba(54, 162, 235, 0.2)",
+                        borderColor: "rgba(54, 162, 235, 0.75)",
+                        borderWidth: 0.6
+                    }, {
+                        label: '발전량',
+                        data: [@ViewBag.Generations.ToString()],
+                        backgroundColor: "orange",
+                        borderColor: "rgba(54, 162, 235, 0.75)",
+                        borderWidth: 0.6
+                    }]
+                },
+                options: {
+                    title: {
+                        display: false,
+                        text: '월별 누적된 전기사용량 및 발전량'
+                    },
+                    scales: {
+                        xAxes: [{
+                            stacked: true,
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: '월'
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            },
+                            type: 'linear',
+                            stacked: true,
+                            display: true,
+                            position: 'left',
+                            scaleLabel: {
+                                display: true,
+                                labelString: '부하량 (kWh)'
+                            }
+                        }]
+                    },
+                    legend: {
+                        display: true,
+                        labels: {
+                            fontColor: 'rgb(255, 99, 132)'
+                        },
+                        position: 'top'
+                    }
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
