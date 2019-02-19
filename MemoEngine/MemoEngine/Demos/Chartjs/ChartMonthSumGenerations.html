@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>월별 누적된 태양광 발전량</title>
+    <script src="../../Dul/Dul.js"></script>
     <script src="/lib/Chartjs/Chart.js"></script>
 </head>
 <body>
@@ -38,7 +39,10 @@
                         }],
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: true,
+                                callback: function (value, index, values) {
+                                    return Dul.NumberUtility.NumberWithCommas(value);
+                                }
                             },
                             type: 'linear',
                             display: true,
