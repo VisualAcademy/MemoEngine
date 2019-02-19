@@ -759,6 +759,9 @@
     <Content Include="Views\Chart\ChartMonthSumGenerations.cshtml" />
     <Content Include="Views\Chart\ChartMonthSumLoadsAndGenerations.cshtml" />
     <Content Include="Views\Chart\ChartReport.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
