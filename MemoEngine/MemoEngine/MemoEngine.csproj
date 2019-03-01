@@ -258,6 +258,7 @@
     <Content Include="Demos\Chartjs\FrmBarChartAxes.html" />
     <Content Include="Demos\Chartjs\FrmBarChartAxesHours.html" />
     <Content Include="Demos\Chartjs\FrmBarChartAxesHoursStacked.html" />
+    <Content Include="Demos\FrmJqueryWithTypeScript.aspx" />
     <Content Include="Demos\HTML\FrmHtmlDropDownList.html" />
     <Content Include="Demos\jQuery\Ajax\MakeLocationFile.html" />
     <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
@@ -595,6 +596,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Demos\FrmJqueryWithTypeScript.aspx.cs">
+      <DependentUpon>FrmJqueryWithTypeScript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demos\FrmJqueryWithTypeScript.aspx.designer.cs">
+      <DependentUpon>FrmJqueryWithTypeScript.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Demos\WebForms\ElectricityPlansUserControl.ascx.cs">
       <DependentUpon>ElectricityPlansUserControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -779,6 +787,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Demos\FrmJqueryWithTypeScript.ts" />
     <TypeScriptCompile Include="Dul\Dul.ts" />
   </ItemGroup>
   <ItemGroup>
