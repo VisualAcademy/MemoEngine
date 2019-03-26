@@ -6,6 +6,7 @@
     수정일: XXXX-XX-XX
 */
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MemoEngine.Models
 {
@@ -18,6 +19,7 @@ namespace MemoEngine.Models
         /// <summary>
         /// 일련번호(Id)
         /// </summary>
+        [Key]
         public int UID { get; set; }
         #endregion
 
