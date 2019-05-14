@@ -260,6 +260,7 @@
     <Content Include="Demos\Chartjs\FrmBarChartAxesHoursStacked.html" />
     <Content Include="Demos\FrmJqueryWithTypeScript.aspx" />
     <Content Include="Demos\HTML\FrmHtmlDropDownList.html" />
+    <Content Include="Demos\HTML\FrmNoticeList.html" />
     <Content Include="Demos\jQuery\Ajax\MakeLocationFile.html" />
     <Content Include="Demos\WebForms\ElectricityPlansUserControl.ascx" />
     <Content Include="Demos\WebForms\FrmAjaxDropDownList.aspx" />
